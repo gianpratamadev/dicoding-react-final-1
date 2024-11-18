@@ -1,9 +1,17 @@
 import React from "react";
 
-function TextInput({ placeholder }) {
+export function TextInput({ children }) {
   return (
-    <div>
-      <input type="text" placeholder={placeholder} />
+    <div className="text-input">
+      <input type="text" placeholder={children} />
+    </div>
+  );
+}
+
+export function LongTextInput({ children }) {
+  return (
+    <div className="long-text-input">
+      <input type="text" placeholder={children} />
     </div>
   );
 }

@@ -5,7 +5,7 @@ function PageHeader() {
   return (
     <header>
       <h1>Notes</h1>
-      <TextInput placeholder="Cari catatan..." />
+      <TextInput>Cari catatan...</TextInput>
       <hr />
     </header>
   );
