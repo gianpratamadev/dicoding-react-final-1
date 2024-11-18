@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f5f5;
-}
-
 header {
     display: flex;
     justify-content: space-between;
@@ -16,13 +11,104 @@ header {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ccc;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #dddddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .create-note {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
+    width: 100%;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px 225px;
+    gap: 10px;
+    background-color: #ffffff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.create-note button {
+    width: 100%;
+    padding: 10px;
+}
+
+.text-input input, textarea {
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    font-family: inherit;  
+    font-size: inherit;    
+    line-height: inherit;
+}
+
+.my-notes h3 {
+    display: block;
+    width: 100%;
+}
+
+.my-notes {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 980px;
+}   
+
+.sticky-note {
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sticky-note__content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    line-height: 1.5;
+}
+
+.sticky-note__date {
+    font-size: 14px;
+    color: #6d6d6d;
+}
+
+.sticky-note__button {
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+.sticky-note__button_delete, .sticky-note__button_archive {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.sticky-note__button_delete {
+  color: #ff0000;
+  font-weight: bold;
+  border-style: solid;
+  border-width: 1px 1px 0px 0px;
+  border-color: #ccc;
+}
+
+.sticky-note__button_archive {
+    color: #0070f8;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 1px 0px 0px 0px;
+  border-color: #ccc;
+  }

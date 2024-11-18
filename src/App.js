@@ -1,17 +1,14 @@
 import React from 'react';
 import './App.css';
 import Header from './components/PageHeader';
-import StickyNote from './components/StickyNote';
-import CreateNote from './components/CreateNote';
-import MyNotes from './components/MyNotes';
+import Body from './components/Body';
 import './style/style.css';
 
 function App() {
   return (
     <>
     <Header />
-    <CreateNote />
-    <MyNotes />
+    <Body />
     </>
   );
 }

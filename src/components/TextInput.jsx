@@ -11,7 +11,7 @@ export function TextInput({ children }) {
 export function LongTextInput({ children }) {
   return (
     <div className="long-text-input">
-      <input type="text" placeholder={children} />
+      <textarea rows="8" type="text" placeholder={children} />
     </div>
   );
 }

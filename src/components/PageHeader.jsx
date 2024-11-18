@@ -6,7 +6,6 @@ function PageHeader() {
     <header>
       <h1>Notes</h1>
       <TextInput>Cari catatan...</TextInput>
-      <hr />
     </header>
   );
 }
