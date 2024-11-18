@@ -1,10 +1,11 @@
 import React from "react";
+import TextInput from "./TextInput";
 
 function PageHeader() {
   return (
     <header>
       <h1>Notes</h1>
-      <TextInput />
+      <TextInput placeholder="Cari catatan..." />
       <hr />
     </header>
   );
