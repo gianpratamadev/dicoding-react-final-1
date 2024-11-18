@@ -1,7 +1,6 @@
 import React from "react";
-import TextInput from "./textinput";
 
-function Header() {
+function PageHeader() {
   return (
     <header>
       <h1>Notes</h1>
@@ -11,4 +10,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default PageHeader;
