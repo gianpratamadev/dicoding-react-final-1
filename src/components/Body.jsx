@@ -2,11 +2,11 @@ import React from "react";
 import CreateNote from "./CreateNote";
 import MyNotes from "./MyNotes";
 
-function Body() {
+function Body({ data }) {
     return (
         <body>
             <CreateNote />
-            <MyNotes />
+            <MyNotes data={data}/>
         </body>
     );
 }

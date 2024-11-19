@@ -20,7 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    max-width: 100%;
 }
 
 .create-note {
@@ -48,19 +48,18 @@ body {
     line-height: inherit;
 }
 
-.my-notes h3 {
-    display: block;
+.my-notes h3, .my-archive h3 {
     width: 100%;
 }
 
-.my-notes {
+.my-notes, .my-archive {
     background-color: #f5f5f5;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 20px;
+    padding: 40px 20px;
     max-width: 980px;
-}   
+}
 
 .sticky-note {
     background-color: #fff;
@@ -95,6 +94,7 @@ body {
     padding: 10px;
     width: 100%;
     text-align: center;
+    text-decoration: none;
 }
 
 .sticky-note__button_delete {
@@ -103,6 +103,12 @@ body {
   border-style: solid;
   border-width: 1px 1px 0px 0px;
   border-color: #ccc;
+  border-radius: 0px 0px 0px 10px;
+}
+
+.sticky-note__button_delete:hover {
+    background-color: #ff5e5e;
+    color: #fff;
 }
 
 .sticky-note__button_archive {
@@ -110,5 +116,12 @@ body {
     font-weight: bold;
     border-style: solid;
     border-width: 1px 0px 0px 0px;
-  border-color: #ccc;
-  }
+    border-color: #ccc;
+    border-radius: 0px 0px 10px 0px;
+}
+
+
+.sticky-note__button_archive:hover {
+    background-color: #549eff;
+    color: #fff;
+}
