@@ -2,15 +2,15 @@ import React from "react";
 
 function NotesSectionContent({ data }) {
   return (
-    <div className="sticky-note">
-      <div className="sticky-note__content">
+    <div className="notes-section-content">
+      <div className="notes-section-content__content">
       <h3>{data.title}</h3>
-      <p className="sticky-note__date">{data.date}</p>
-      <p className="sticky-note__body">{data.body}</p>
+      <p className="notes-section-content__date">{data.date}</p>
+      <p className="notes-section-content__body">{data.body}</p>
       </div> 
-      <div className="sticky-note__button">
-        <a href="#" className="sticky-note__button_delete">Delete</a>
-        <a href="#" className="sticky-note__button_archive">Archive</a>
+      <div className="notes-section-content__button">
+        <a href="#" className="notes-section-content__button_delete">Delete</a>
+        <a href="#" className="notes-section-content__button_archive">Archive</a>
       </div>
     </div>
   );

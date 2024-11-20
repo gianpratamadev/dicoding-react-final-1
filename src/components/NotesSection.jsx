@@ -1,17 +1,17 @@
 import React from "react";
 import NotesSectionContent from "./NotesSectionContent";
 
-function NotesContent({ title, data }) {
+function NotesSection({ title, data }) {
   return (
-    <div className="my-notes">
+    <div className="notes-section">
       <h2>{ title }</h2>
-      <div className="my-notes__body">
+      <div className="notes-section__body">
         {data.map((item) => (
-          <NotesSectionContent id={item.id} data={item}/>
+          <NotesSectionContent id={ item.id } data={ item}/>
         ))}
       </div>
     </div>
   );
 }
 
-export default NotesContent;
+export default NotesSection;

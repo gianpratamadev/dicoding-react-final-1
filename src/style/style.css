@@ -54,12 +54,12 @@ body {
 }
 
 
-.my-notes {
+.notes-section {
     background-color: #f5f5f5;
     padding: 40px 20px;
 }
 
-.my-notes__body {
+.notes-section__body {
     width: 940px;
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +67,7 @@ body {
 }
 
 
-.sticky-note {
+.notes-section-content {
     background-color: #fff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -79,7 +79,7 @@ body {
     gap: 10px;
 }
 
-.sticky-note__content {
+.notes-section-content__content {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -87,24 +87,24 @@ body {
     line-height: 1.5;
 }
 
-.sticky-note__date {
+.notes-section-content__date {
     font-size: 14px;
     color: #6d6d6d;
 }
 
-.sticky-note__button {
+.notes-section-content__button {
     display: flex;
     justify-content: space-evenly;
 } 
 
-.sticky-note__button_delete, .sticky-note__button_archive {
+.notes-section-content__button_delete, .notes-section-content__button_archive {
     padding: 10px;
     width: 100%;
     text-align: center;
     text-decoration: none;
 }
 
-.sticky-note__button_delete {
+.notes-section-content__button_delete {
   color: #ff0000;
   font-weight: bold;
   border-style: solid;
@@ -113,12 +113,12 @@ body {
   border-radius: 0px 0px 0px 10px;
 }
 
-.sticky-note__button_delete:hover {
+.notes-section-content__button_delete:hover {
     background-color: #ff5e5e;
     color: #fff;
 }
 
-.sticky-note__button_archive {
+.notes-section-content__button_archive {
     color: #0070f8;
     font-weight: bold;
     border-style: solid;
@@ -128,7 +128,7 @@ body {
 }
 
 
-.sticky-note__button_archive:hover {
+.notes-section-content__button_archive:hover {
     background-color: #549eff;
     color: #fff;
 }
