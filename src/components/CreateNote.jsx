@@ -5,7 +5,7 @@ import Button from "./Button";
 function CreateNote() {
   return (
     <div className="create-note">
-      <h3>Buat Catatan</h3>
+      <h2>Buat Catatan</h2>
       <p>Sisa karakter: 50</p>
       <TextInput>Ini adalah judul...</TextInput>
       <LongTextInput>Tuliskan catatanmu disini...</LongTextInput>

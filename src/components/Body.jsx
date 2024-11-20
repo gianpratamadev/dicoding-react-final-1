@@ -1,12 +1,13 @@
 import React from "react";
 import CreateNote from "./CreateNote";
-import MyNotes from "./MyNotes";
+import NotesSection from "./NotesSection";
 
 function Body({ data }) {
     return (
         <body>
             <CreateNote />
-            <MyNotes data={data}/>
+            <NotesSection title="Catatan Saya" data={data}/>
+            <NotesSection title="Arsip Catatan" data={data}/>
         </body>
     );
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "./Button";
-function StickyNote() {
+
+function NotesSectionContent() {
   return (
     <div className="sticky-note">
       <div className="sticky-note__content">
@@ -16,4 +16,4 @@ function StickyNote() {
   );
 }
 
-export default StickyNote;
+export default NotesSectionContent;

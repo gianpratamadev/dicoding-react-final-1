@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+h2 {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -48,18 +53,19 @@ body {
     line-height: inherit;
 }
 
-.my-notes h3, .my-archive h3 {
-    width: 100%;
+
+.my-notes {
+    background-color: #f5f5f5;
+    padding: 40px 20px;
 }
 
-.my-notes, .my-archive {
-    background-color: #f5f5f5;
+.my-notes__body {
+    width: 940px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 40px 20px;
-    max-width: 980px;
 }
+
 
 .sticky-note {
     background-color: #fff;
