@@ -5,13 +5,22 @@ import Body from './components/Body';
 import './style/style.css';
 import data from './utils/data';
 
-function App() {
-  return (
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data: data()
+    }
+  }
+
+  render() {
+    return (
     <>
     <PageHeader />
-    <Body data={data} />
+    <Body data={this.state.data} />
     </>
   );
+  }
 }
 
 export default App;
