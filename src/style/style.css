@@ -132,3 +132,10 @@ body {
     background-color: #549eff;
     color: #fff;
 }
+
+.notes-section__empty-message {
+   text-align: center;
+   padding: 20px 0px;
+   width: 100%;
+   color: #7f7f7f;
+}

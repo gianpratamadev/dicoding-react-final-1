@@ -1,11 +1,11 @@
 import React from "react";
 import TextInput from "./TextInput";
 
-function PageHeader() {
+function PageHeader({ onSearch, onEmptySearch }) {
   return (
     <header>
       <h1>Notes</h1>
-      <TextInput>Cari catatan...</TextInput>
+      <TextInput onChange={onSearch} onEmptySearch={onEmptySearch}>Cari catatan...</TextInput>
     </header>
   );
 }
