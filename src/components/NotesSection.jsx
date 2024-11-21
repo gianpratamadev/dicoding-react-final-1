@@ -6,8 +6,8 @@ function NotesSection({ title, data }) {
     <div className="notes-section">
       <h2>{ title }</h2>
       <div className="notes-section__body">
-        {data.map((item) => (
-          <NotesSectionContent id={ item.id } data={ item}/>
+        {data.map((data) => (
+          <NotesSectionContent id={ data.id } data={ data }/>
         ))}
       </div>
     </div>

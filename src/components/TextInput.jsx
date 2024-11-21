@@ -1,17 +1,17 @@
 import React from "react";
 
-export function TextInput({ children }) {
+export function TextInput({ value, children, onChange }) {
   return (
     <div className="text-input">
-      <input type="text" placeholder={children} />
+      <input type="text" placeholder={children} value={value} onChange={onChange} />
     </div>
   );
 }
 
-export function LongTextInput({ children }) {
+export function LongTextInput({ value,children, onChange }) {
   return (
     <div className="long-text-input">
-      <textarea rows="8" type="text" placeholder={children} />
+      <textarea rows="8" type="text" placeholder={children} value={value} onChange={onChange} />
     </div>
   );
 }
