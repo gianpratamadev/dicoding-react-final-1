@@ -10,7 +10,6 @@ function Body({
   onBodyChange,
   onHandleSubmit,
   onDeleteNote,
-  onEmptyCheck,
   onArchiveNote,
 }) {
   return (
@@ -26,14 +25,12 @@ function Body({
         title="Catatan Saya"
         data={data.filter((note) => note.archived === false)}
         onDeleteNote={onDeleteNote}
-        onEmptyCheck={onEmptyCheck}
         onArchiveNote={onArchiveNote}
       />
       <NotesSection
         title="Arsip Catatan"
         data={data.filter((note) => note.archived === true)}
         onDeleteNote={onDeleteNote}
-        onEmptyCheck={onEmptyCheck}
         onArchiveNote={onArchiveNote}
       />
     </body>

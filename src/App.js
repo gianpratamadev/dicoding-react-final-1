@@ -16,10 +16,7 @@ class App extends React.Component {
     this.onBodyChange = this.onBodyChange.bind(this);
     this.onHandleSubmit = this.onHandleSubmit.bind(this);
     this.onDeleteNote = this.onDeleteNote.bind(this);
-    this.onEmptyCheck = this.onEmptyCheck.bind(this);
     this.onArchiveNote = this.onArchiveNote.bind(this);
-    this.onSearch = this.onSearch.bind(this);
-    this.onEmptySearch = this.onEmptySearch.bind(this);
   }
 
   onTitleChange = (event) => {
@@ -42,7 +39,7 @@ class App extends React.Component {
     };
 
     this.setState((event) => ({
-      data: [...event.data, newNote],
+      data: [newNote, ...event.data ],
       title: "",
       body: "",
     }));
@@ -51,25 +48,6 @@ class App extends React.Component {
   onDeleteNote = (id) => {
     this.setState((prevState) => ({
       data: prevState.data.filter((note) => note.id !== id),
-    }));
-  };
-
-  onEmptyCheck = () => {
-    const isEmpty = this.state.data.length === 0;
-    if (isEmpty) {
-      return <p className="notes-section__empty-message">Tidak ada catatan</p>;
-    }
-  };
-
-  onSearch = (event) => {
-    this.setState((prevState) => ({
-      data: prevState.data.filter((note) => note.title.toLowerCase().includes(event.target.value.toLowerCase())),
-    }));
-  };
-
-  onEmptySearch = () => {
-    this.setState((prevState) => ({
-      data: prevState.data,
     }));
   };
 
@@ -82,14 +60,13 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <PageHeader onSearch={this.onSearch} onEmptySearch={this.onEmptySearch} />
+        <PageHeader/>
         <Body
           data={this.state.data}
           onTitleChange={this.onTitleChange}
           onBodyChange={this.onBodyChange}
           onHandleSubmit={this.onHandleSubmit}
           onDeleteNote={this.onDeleteNote}
-          onEmptyCheck={this.onEmptyCheck}
           onArchiveNote={this.onArchiveNote}
         />
       </>
