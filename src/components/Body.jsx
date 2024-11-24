@@ -11,6 +11,7 @@ function Body({
   onHandleSubmit,
   onDeleteNote,
   onArchiveNote,
+  titleMaxLength,
 }) {
   return (
     <body>
@@ -20,6 +21,7 @@ function Body({
         onTitleChange={onTitleChange}
         onBodyChange={onBodyChange}
         onHandleSubmit={onHandleSubmit}
+        titleMaxLength={titleMaxLength}
       />
       <NotesSection
         title="Catatan Saya"

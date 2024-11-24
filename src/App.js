@@ -10,6 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: getInitialData(),
+      titleMaxLength: 50,
     };
 
     this.onTitleChange = this.onTitleChange.bind(this);
@@ -20,7 +21,14 @@ class App extends React.Component {
   }
 
   onTitleChange = (event) => {
-    this.setState({ title: event.target.value });
+    const newTitle = event.target.value;
+
+    if (newTitle.length <= 50) {
+      this.setState({
+        title: newTitle,
+        titleMaxLength: 50 - newTitle.length
+      });
+    }
   };
 
   onBodyChange = (event) => {
@@ -39,10 +47,13 @@ class App extends React.Component {
     };
 
     this.setState((event) => ({
-      data: [newNote, ...event.data ],
+      data: [newNote, ...event.data],
       title: "",
       body: "",
     }));
+
+    event.target.reset();
+    this.setState({ titleMaxLength: 50 });
   };
 
   onDeleteNote = (id) => {
@@ -53,14 +64,16 @@ class App extends React.Component {
 
   onArchiveNote = (id) => {
     this.setState((prevState) => ({
-      data: prevState.data.map((note) => note.id === id ? { ...note, archived: !note.archived } : note),
+      data: prevState.data.map((note) =>
+        note.id === id ? { ...note, archived: !note.archived } : note
+      ),
     }));
   };
 
   render() {
     return (
       <>
-        <PageHeader/>
+        <PageHeader />
         <Body
           data={this.state.data}
           onTitleChange={this.onTitleChange}
@@ -68,6 +81,7 @@ class App extends React.Component {
           onHandleSubmit={this.onHandleSubmit}
           onDeleteNote={this.onDeleteNote}
           onArchiveNote={this.onArchiveNote}
+          titleMaxLength={this.state.titleMaxLength}
         />
       </>
     );
