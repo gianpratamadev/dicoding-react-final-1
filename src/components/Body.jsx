@@ -1,6 +1,7 @@
 import React from "react";
 import CreateNote from "./CreateNote";
 import NotesSection from "./NotesSection";
+import ArchiveSection from "./ArchiveSection";
 
 function Body({
   data,
@@ -12,6 +13,8 @@ function Body({
   onDeleteNote,
   onArchiveNote,
   titleMaxLength,
+  searchValue,
+  onSearchChange,
 }) {
   return (
     <body>
@@ -28,8 +31,10 @@ function Body({
         data={data.filter((note) => note.archived === false)}
         onDeleteNote={onDeleteNote}
         onArchiveNote={onArchiveNote}
+        searchValue={searchValue}
+        onSearchChange={onSearchChange}
       />
-      <NotesSection
+      <ArchiveSection
         title="Arsip Catatan"
         data={data.filter((note) => note.archived === true)}
         onDeleteNote={onDeleteNote}

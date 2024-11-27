@@ -11,6 +11,7 @@ class App extends React.Component {
     this.state = {
       data: getInitialData(),
       titleMaxLength: 50,
+      searchValue: "",
     };
 
     this.onTitleChange = this.onTitleChange.bind(this);
@@ -18,6 +19,7 @@ class App extends React.Component {
     this.onHandleSubmit = this.onHandleSubmit.bind(this);
     this.onDeleteNote = this.onDeleteNote.bind(this);
     this.onArchiveNote = this.onArchiveNote.bind(this);
+    this.onSearchChange = this.onSearchChange.bind(this);
   }
 
   onTitleChange = (event) => {
@@ -26,7 +28,8 @@ class App extends React.Component {
     if (newTitle.length <= 50) {
       this.setState({
         title: newTitle,
-        titleMaxLength: 50 - newTitle.length
+        titleMaxLength: 50 - newTitle.length,
+        searchValue: "",
       });
     }
   };
@@ -70,10 +73,16 @@ class App extends React.Component {
     }));
   };
 
+  onSearchChange = (event) => {
+    const searchValue = event.target.value;
+
+    this.setState({ searchValue: searchValue });
+  };
+
   render() {
     return (
       <>
-        <PageHeader />
+        <PageHeader searchValue={this.state.searchValue} onSearchChange={this.onSearchChange}/>
         <Body
           data={this.state.data}
           onTitleChange={this.onTitleChange}
@@ -82,6 +91,8 @@ class App extends React.Component {
           onDeleteNote={this.onDeleteNote}
           onArchiveNote={this.onArchiveNote}
           titleMaxLength={this.state.titleMaxLength}
+          searchValue={this.state.searchValue}
+          onSearchChange={this.onSearchChange}
         />
       </>
     );
