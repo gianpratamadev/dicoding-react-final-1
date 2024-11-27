@@ -8,32 +8,29 @@ function NotesSection({
   onArchiveNote,
   searchValue,
 }) {
+  
+  const filteredNotes = searchValue 
+    ? data.filter((note) => 
+        note.title.toLowerCase().includes(searchValue.toLowerCase())
+      )
+    : data;
+
   return (
     <div className="notes-section">
       <h2>{title}</h2>
       <div className="notes-section__body">
-        {data.length != 0 ? (
-          data.map((data) => (
+        {filteredNotes.length === 0 ? (
+          <p className="notes-section__empty-message">Tidak ada catatan</p>
+        ) : (
+          filteredNotes.map((data) => (
             <NotesSectionContent
+              key={data.id}
               id={data.id}
               data={data}
               onDeleteNote={onDeleteNote}
               onArchiveNote={onArchiveNote}
             />
           ))
-        ) : searchValue !== "" ? (
-          data
-            .filter((data) => data.title.includes(searchValue))
-            .map((data) => (
-              <NotesSectionContent
-                id={data.id}
-                data={data}
-                onDeleteNote={onDeleteNote}
-                onArchiveNote={onArchiveNote}
-              />
-            ))
-        ) : (
-          <p className="notes-section__empty-message">Tidak ada catatan</p>
         )}
       </div>
     </div>
